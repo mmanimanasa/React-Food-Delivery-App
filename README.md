@@ -13,3 +13,18 @@
 -Code Splitting
 -Differential Bundling - to support older browsers
 -Error handling
+
+/**
+ * Header
+ *  - Logo
+ *  - NaavItems
+ * Body
+ *  - Search
+ *  - RestaurantContainer
+ *    - Restauraunt Card
+ * Footer
+ *  - Copyright
+ *  - Links
+ *  - Address
+ *  - Contact
+ */
