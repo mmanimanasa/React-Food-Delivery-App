@@ -1,4 +1,4 @@
-const ContactUs = () => {
+const Cart = () => {
     return (
         <div>
             <h4>This is contact us</h4>
@@ -6,4 +6,4 @@ const ContactUs = () => {
     )
 }
 
-export default ContactUs;
+export default Cart;

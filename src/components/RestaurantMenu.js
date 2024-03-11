@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { SWIGGY_RESMENU_URL, CON_URL } from "../utils/constants";
+import { MenuShimmer } from "./Shimmer";
 const RestaurantMenu = () => {
     const [resInfo, setInfo] = useState(null);
-
+    const [addeditems, setaddeditems] = useState([]);
     const {resId} = useParams()
     useEffect(()=> {
         fetchMenu();
@@ -20,7 +21,7 @@ const RestaurantMenu = () => {
         setInfo(json.data)
         console.log(resInfo)
     }
-    if (resInfo === null)  return <Shimmer />
+    if (resInfo === null)  return <MenuShimmer />
     
     const {
       name,
@@ -35,7 +36,7 @@ const RestaurantMenu = () => {
     // resInfo?.cards.find((x) => x.groupedCard)
     //   ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x) => x.card.card)
     //   ?.filter((x) => x["type"] == "CATEGORY_TYPE_RECOMMENDED")?.map(x=>x.itemCards).flat().map(x=> x.card?.info) || [];
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    resInfo?.cards?.find((x) => x.groupedCard)?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
     return (
       <div className="restaurant-menu">
         <div className="restaurant-summary">
@@ -73,10 +74,10 @@ const RestaurantMenu = () => {
           <div className="menu-items-container">
             <div className="menu-title-wrap">
               <h3 className="menu-title">Recommended</h3>
-              <p className="menu-count">{itemCards.length}ITEMS</p>
+              <p className="menu-count">{itemCards?.length}ITEMS</p>
             </div>
             <div className="menu-items-list">
-              {itemCards.map((item) => (
+              {itemCards?.map((item) => (
                 <div className="menu-item" key={item.card.info.id}>
                   <div className="menu-item.details">
                     <h3 className="item-title">{item.card.info.name}</h3>
@@ -101,31 +102,16 @@ const RestaurantMenu = () => {
                         alt={item?.card?.info?.name}
                       ></img>
                     )}
-                    <button className="add-btn">ADD +</button>
+                    <button className="add-btn" onClick={() => {
+                      const cartitems = cartitems.push(item)
+                      setaddeditems(cartitems)
+                    }} >ADD +</button>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        {/* <div className="menu-container">
-            {itemCards.map((item) => (
-              <div key={item.card.info.id}>
-                <h3 className="menu-name">{item.card.info.name} </h3>
-                <span className="menu-price">
-                  {"Rs."}{" "}
-                  {item.card.info.price / 100 ||
-                    item.card.info.defaultPrice / 100}
-                </span>
-                <img
-                  alt="res-logo"
-                  className="menu-logo"
-                  src={CON_URL + item.card.info.imageId}
-                />
-                <p>{item.card.info.description}</p>
-              </div>
-            ))}
-          </div> */}
       </div>
     );
 }

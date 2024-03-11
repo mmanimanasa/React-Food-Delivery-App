@@ -3,9 +3,11 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import AboutUs from "./components/AboutUs";
-import ContactUs from "./components/ContactUs";
+import Cart from "./components/Cart";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Footer from "./components/Footer";
+import Profile from "./components/Profile";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 
@@ -16,6 +18,7 @@ const AppLayout = () => {
     <>
       <Header />
       <Outlet />
+      <Footer/>
     </>
   );
 };
@@ -25,21 +28,27 @@ const appRouter = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        path : "/",
-        element : <Body />
+        path: "/",
+        element: <Body />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <AboutUs />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
       {
-        path: "/contact",
-        element: <ContactUs />,
+        path: "/cart",
+        element: <Cart />,
       },
       {
-        path : "/restaurants/:resId",
-        element : <RestaurantMenu />
-      }
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
+      },
     ],
     errorElement: <Error />,
   },

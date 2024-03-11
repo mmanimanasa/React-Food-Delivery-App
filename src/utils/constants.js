@@ -1,5 +1,4 @@
 export const LOGO_URL =
-  //"https://as1.ftcdn.net/v2/jpg/03/33/90/46/1000_F_333904627_tnCepUpc3Uynb6stmEbverr8HeWS2VZl.jpg";
   "https://i.pinimg.com/originals/34/0c/6a/340c6add7519212185a08d4205eb1965.png";
   
 
@@ -8,3 +7,17 @@ export const CON_URL =
 
 export const SWIGGY_RESMENU_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=";
+
+export const Github_UserName = "manimanasa";
+export const Github_Repository_Name = "React-Learning";
+export const Github_API_User = "https://api.github.com/users/";
+export const Github_Link = "https://github.com/mmanimanasa";
+export const Linkedin_Link = "https://www.linkedin.com/in/mani-manasa-mandadapu/";
+export const Email_Link = "mailto:mmanimanasa97@gmail.com";
+
+export const options = {
+  method: "GET",
+  headers: {
+    Authorization: "",
+  },
+};
