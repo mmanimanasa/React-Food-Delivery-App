@@ -15,11 +15,11 @@ import { StrictMode } from "react";
 
 const AppLayout = () => {
   return (
-    <>
+    <React.Fragment>
       <Header />
         <Outlet />
       <Footer />
-    </>
+    </React.Fragment>
   );
 };
 const appRouter = createBrowserRouter([
