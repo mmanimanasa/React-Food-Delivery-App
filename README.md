@@ -1,30 +1,9 @@
 # React Learning
 
-# Parcel
--Dev Build
--Local Server
--HMR - Hot Module Replacement (Automatic Updation of code change on the server)
--File Watching Algorithm
--Caching - Faster Builds
--Image Optimization
--Minification
--Bundling
--Compress
--Code Splitting
--Differential Bundling - to support older browsers
--Error handling
+I made a food delivery app from the scratch using React.js and Parcel.js
 
-/**
- * Header
- *  - Logo
- *  - NaavItems
- * Body
- *  - Search
- *  - RestaurantContainer
- *    - Restauraunt Card
- * Footer
- *  - Copyright
- *  - Links
- *  - Address
- *  - Contact
- */
+# Contents
+
+It has all th main components in the component folder.
+In Utils we have the Custom Hooks that were created.
+In this app I have Context API for managaing state variable across the app.
