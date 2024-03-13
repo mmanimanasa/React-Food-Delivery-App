@@ -9,16 +9,16 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
-
+import MyContextProvider from "./MyContext";
+import { StrictMode } from "react";
 
 
 const AppLayout = () => {
   return (
     <>
       <Header />
-      <Outlet />
-      <Footer/>
+        <Outlet />
+      <Footer />
     </>
   );
 };
@@ -54,4 +54,10 @@ const appRouter = createBrowserRouter([
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <StrictMode>
+    <MyContextProvider>
+      <RouterProvider router={appRouter} />
+    </MyContextProvider>
+  </StrictMode>
+);
