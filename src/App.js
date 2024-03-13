@@ -11,15 +11,15 @@ import Profile from "./components/Profile";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import MyContextProvider from "./MyContext";
 import { StrictMode } from "react";
-
+import { Fragment } from "react";
 
 const AppLayout = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <Header />
-        <Outlet />
+      <Outlet />
       <Footer />
-    </React.Fragment>
+    </Fragment>
   );
 };
 const appRouter = createBrowserRouter([
