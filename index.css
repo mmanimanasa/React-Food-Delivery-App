@@ -847,6 +847,7 @@ a {
 .cart-title {
   width: auto;
   color: var(--light-text-color);
+  width: 250px;
 }
 .cart-cost {
   margin-top: 4px;
