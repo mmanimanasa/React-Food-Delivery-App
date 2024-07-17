@@ -1,9 +1,6 @@
-# React Learning
+# React Food Delivery
 
-I made a food delivery app from the scratch using React.js and Parcel.js
+Food delivery app built with React and Parcel. Discover a variety of dishes from different restaurants, complete with a user-friendly search feature for easy navigation.
 
-# Contents
+Option to explore each restaurant's menu, add items directly to your cart, and seamlessly proceed to checkout to view your total. App utilizes React's Context API for efficient state management, ensuring a smooth and responsive user experience.
 
-It has all th main components in the component folder.
-In Utils we have the Custom Hooks that were created.
-In this app I have Context API for managaing state variable across the app.
