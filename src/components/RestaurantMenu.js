@@ -22,7 +22,7 @@ const RestaurantMenu = () => {
       cloudinaryImageId,
       avgRatingString,
       sla
-    } = resInfo?.cards[0]?.card?.card?.info;
+    } = resInfo?.cards[3]?.card?.card?.info;
 
     const { itemCards } = 
     resInfo?.cards?.find((x) => x.groupedCard)?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
